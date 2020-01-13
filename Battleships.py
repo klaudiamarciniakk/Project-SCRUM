@@ -49,22 +49,37 @@ class Ship():
 
 
 # Główna pętla
+i = 0
 while True:
 
     # Sprawdza eventy , zamknięcie X gry oraz klikniecie przyciskiem
+
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
+
 
             pos = pygame.mouse.get_pos()
             # Zamienia koordynaty x/y na koordynaty gridu
             column = pos[0] // (WIDTH + MARGIN)
             row = pos[1] // (HEIGHT + MARGIN)
             # ustawia w tablicy dana lokacje na 1 i wyswietla w konsoli współrzędne
-            grid[row][column] = 1
+
             print("Click ", pos, "Grid coordinates: ", row, column)
+            if grid[row][column] == 1:
+                print("miejsce jest juz wykorzystane")
+            elif grid[row][column] ==0:
+                if i>=20:
+                    print("Limit statkow wykorzystany")
+                elif i<20:
+                    grid[row][column] = 1
+                    i=i+1
+                    print(i)
+
+
 
     # Ustawia tło
     display_ships.fill(BLACK)
