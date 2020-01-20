@@ -97,7 +97,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.ship').on('click', function() {
+ /* $('.ship').on('click', function() {
     ship = $(".ship").text();
     if (ship == "Carrier")
        $('.ship').text("Battleship");
@@ -109,6 +109,21 @@ $(document).ready(function() {
        $('.ship').text("Destroyer");
     else if (ship == "Destroyer")
        $('.ship').text("Carrier");
+  });*/
+  $('.ship1').on('click', function() {
+    $('.ship').text("Carrier");
+  });
+  $('.ship2').on('click', function() {
+    $('.ship').text("Battleship");
+  });
+  $('.ship3').on('click', function() {
+    $('.ship').text("Cruiser");
+  });
+  $('.ship4').on('click', function() {
+    $('.ship').text("Submarine");
+  });
+  $('.ship5').on('click', function() {
+    $('.ship').text("Destroyer");
   });
 
   $('.orientation').on('click', function() {
