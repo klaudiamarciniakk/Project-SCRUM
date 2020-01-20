@@ -165,5 +165,5 @@ def send_alert(message, rm=None):
   send({"type":"alert", "message":message}, room=rm)
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=8080)
+    socketio.run(app, host='localhost', port=8080)
 
