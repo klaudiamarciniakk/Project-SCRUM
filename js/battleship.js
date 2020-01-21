@@ -3,6 +3,12 @@ var socket;
 var turn;
 var room;
 
+var bat = 2;
+var car = 1;
+var cru = 3;
+var des = 3;
+var sub = 1;
+
 var player_id = Math.random().toString(36).substring(2);
 var player_no = 0;
 var shot_type = "normal";
@@ -175,6 +181,25 @@ var enemyBoard = {
 }
 
 function placeShip(location, length, direction, ship) {
+
+  shipText = $(".ship").text();
+    if (shipText == "Carrier"){
+       car-=1;
+       $('.ship1').text("Carrier : " + car.toString());}
+    else if (shipText == "Battleship"){
+       bat-=1;
+       $('.ship2').text("Battleship : " + bat.toString());}
+    else if (shipText == "Cruiser"){
+        cru-=1;
+       $('.ship3').text("Cruiser : " + cru.toString());}
+    else if (shipText == "Submarine"){
+        sub-=1;
+       $('.ship4').text("Submarine : "+sub.toString());}
+    else if (shipText == "Destroyer"){
+        des-=1;
+       $('.ship5').text("Destroyer : "+des.toString());}
+
+
   if (direction == "horizontal"){
     for (var i = location; i < (location + length); i++) {
       $(".bottom ." + i).addClass(ship);
