@@ -69,7 +69,7 @@ class Carrier(Ship):
 
 
 class BattleshipGame():
-  shipMaxCount = 5
+  shipMaxCount = 10
   def __init__(self, player_id = "1"):
     self.current_player = 1
     self.players={}
