@@ -86,7 +86,7 @@ $(document).ready(function() {
         console.log($(board).find(String(loc)).children());
       }
       $(".text").text("Player " + String(msg.player_no) + " fired " + msg.shot
-        + " shot at location " + String(msg.locations[0]+1) + ", " + hit + "!");
+        + " shot at location " + String(((msg.locations[0]+1)%10)) + ", "+String(String.fromCharCode(~~(((msg.locations[0]+1)/10)+1)+64))+", " + hit + "!");
     }
     else if (msg.type == "game_over"){
       phase = "game_over"
