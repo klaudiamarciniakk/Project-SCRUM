@@ -88,50 +88,6 @@ def handle_place_ship(msg):
   global sub
   global des
 
-  if msg["ship"] in player_ships[msg["id"]]:
-    if (msg["ship"].title() == "Battleship"):
-
-      if (bat > 0):
-        player_ships[msg["id"]].append(msg["ship"])
-        bat-=1
-
-
-      else:
-        send_alert(msg["ship"].title() + " already placed.")
-        return
-    elif (msg["ship"].title() == "Cruiser"):
-      if (cru > 0):
-        player_ships[msg["id"]].append(msg["ship"])
-        cru-=1
-
-      else:
-        send_alert(msg["ship"].title() + " already placed.")
-        return
-    elif (msg["ship"].title() == "Carrier"):
-      if (car > 0):
-        player_ships[msg["id"]].append(msg["ship"])
-        car-=1
-      else:
-        send_alert(msg["ship"].title() + " already placed.")
-        return
-    elif (msg["ship"].title() == "Submarine"):
-      if (sub > 0):
-        player_ships[msg["id"]].append(msg["ship"])
-        sub-=1
-      else:
-        send_alert(msg["ship"].title() + " already placed.")
-        return
-    elif (msg["ship"].title() == "Destroyer"):
-      if (des > 0):
-        player_ships[msg["id"]].append(msg["ship"])
-        des-=1
-      else:
-        send_alert(msg["ship"].title() + " already placed.")
-        return
-  else:
-
-    player_ships[msg["id"]].append(msg["ship"])
-
 
   if msg["ship"] in player_ships[msg["id"]]:
     if (msg["ship"].title() == "Battleship"):
