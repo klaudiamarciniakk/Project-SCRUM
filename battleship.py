@@ -4,7 +4,7 @@ boardWidth = 10
 boardHeight = 10
 
 class Ship():
-  ships = {'carrier':5, 'battleship':4, 'cruiser':3, 'submarine':3, 'destroyer':2}
+  ships = {'carrier':1, 'battleship':4, 'cruiser':3, 'submarine':3, 'destroyer':2}
   def __init__(self, location = 0, type ='carrier', direction="horizontal"):
     self._loc = location
     self._len = self.ships[type]

@@ -3,9 +3,9 @@ var socket;
 var turn;
 var room;
 
-var bat = 2;
-var car = 1;
-var cru = 3;
+var bat = 1;
+var car = 4;
+var cru = 1;
 var des = 3;
 var sub = 1;
 
@@ -16,7 +16,7 @@ var boardWidth = 10; // Not currently a proper way to designate width.
 var active_orientation = "horz";
 var phase = "placement";
 ships = {
-  "Carrier": 5, 
+  "Carrier": 1,
   "Battleship":4,
   "Cruiser":3,
   "Submarine":3,

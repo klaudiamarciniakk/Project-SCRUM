@@ -184,9 +184,9 @@ def handle_hand_shake(msg):
     global sub
     global des
     players[msg["id"]] = get_a_game(msg["id"])
-    bat.setdefault(msg["id"],2)
-    car.setdefault(msg["id"],1)
-    cru.setdefault(msg["id"],3)
+    bat.setdefault(msg["id"],1)
+    car.setdefault(msg["id"],4)
+    cru.setdefault(msg["id"],1)
     des.setdefault(msg["id"],3)
     sub.setdefault(msg["id"],1)
 
