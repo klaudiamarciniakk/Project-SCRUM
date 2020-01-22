@@ -132,11 +132,6 @@ def handle_place_ship(msg):
 
     player_ships[msg["id"]].append(msg["ship"])
 
-  global bat
-  global cru
-  global car
-  global sub
-  global des
 
   if msg["ship"] in player_ships[msg["id"]]:
     if (msg["ship"].title() == "Battleship"):
