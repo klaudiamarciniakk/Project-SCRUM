@@ -249,7 +249,7 @@ def alert_ship_placement(msg, rm=None):
   send_alert(
     msg["ship"].title() + " placed. " 
     + msg["direction"].title() + ", at (" 
-    + str(x) + "," + str(y) + ").", rm)
+    + str(x) + "," + str(chr(int(y)+64)) + ").", rm)
 
 def send_alert(message, rm=None):
   send({"type":"alert", "message":message}, room=rm)
