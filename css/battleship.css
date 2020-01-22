@@ -15,7 +15,7 @@ html {
   width: 755px;
   height: 800px;
   margin: auto;
-
+  padding-top: 1px;
 }
 
 .board {
@@ -130,8 +130,6 @@ html {
 
 .panel {
   width: 755px;
-  height: 175px;
-
 }
 
 .topPanel {
@@ -140,7 +138,14 @@ html {
   display: inline-block;
 }
 
-.bottomPanel {
+.SelectShips {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bShip {
+  width: 50%;
 
 }
 
@@ -275,6 +280,55 @@ html {
   -moz-animation-fill-mode: none;
 
 }
+
+.container1 {
+  display: flex;
+  width: 50%;
+}
+
+.switches {
+  justify-content: center;
+  flex-flow: column-reverse;
+}
+
+.background {
+  margin: auto;
+  padding: 10px;
+}
+
+.colorbutton {
+  position: relative;
+  display: block;
+  /*width: 150px;*/
+  /*height: 40px;*/
+  color: #0a0a0a;
+  background-color: rgba(138, 47, 238, 0.84);
+  border: 2px solid #000000;
+  margin: 10px;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  text-align: center;
+  line-height: 40px;
+
+  cursor: pointer;
+}
+.button {
+  background: white;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 80%;
+  margin: 10px;
+}
+
+
 
 @keyframes expand {
   0% {

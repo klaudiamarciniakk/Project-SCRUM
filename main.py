@@ -19,8 +19,6 @@ players = {}
 player_numbers = {}
 player_ships = {}
 
-<<<<<<< Updated upstream
-=======
 bat={}
 car={}
 cru={}
@@ -28,7 +26,6 @@ des={}
 sub={}
 
 
->>>>>>> Stashed changes
 
 @app.route('/css/<path:path>', methods=['GET'])
 def send_css(path):
@@ -84,13 +81,57 @@ def handle_chat(msg):
     "type":"chat"})
 
 def handle_place_ship(msg):
-<<<<<<< Updated upstream
+  
+  global bat
+  global cru
+  global car
+  global sub
+  global des
+
   if msg["ship"] in player_ships[msg["id"]]:
-    send_alert(msg["ship"].title()+" already placed.")
-    return
+    if (msg["ship"].title() == "Battleship"):
+
+      if (bat > 0):
+        player_ships[msg["id"]].append(msg["ship"])
+        bat-=1
+
+
+      else:
+        send_alert(msg["ship"].title() + " already placed.")
+        return
+    elif (msg["ship"].title() == "Cruiser"):
+      if (cru > 0):
+        player_ships[msg["id"]].append(msg["ship"])
+        cru-=1
+
+      else:
+        send_alert(msg["ship"].title() + " already placed.")
+        return
+    elif (msg["ship"].title() == "Carrier"):
+      if (car > 0):
+        player_ships[msg["id"]].append(msg["ship"])
+        car-=1
+      else:
+        send_alert(msg["ship"].title() + " already placed.")
+        return
+    elif (msg["ship"].title() == "Submarine"):
+      if (sub > 0):
+        player_ships[msg["id"]].append(msg["ship"])
+        sub-=1
+      else:
+        send_alert(msg["ship"].title() + " already placed.")
+        return
+    elif (msg["ship"].title() == "Destroyer"):
+      if (des > 0):
+        player_ships[msg["id"]].append(msg["ship"])
+        des-=1
+      else:
+        send_alert(msg["ship"].title() + " already placed.")
+        return
   else:
+
     player_ships[msg["id"]].append(msg["ship"])
-=======
+
   global bat
   global cru
   global car
@@ -143,6 +184,7 @@ def handle_place_ship(msg):
       player_ships[msg["id"]].append(msg["ship"])
       bat[msg["id"]]-=1
 
+
     elif (msg["ship"].title() == "Cruiser"):
 
       player_ships[msg["id"]].append(msg["ship"])
@@ -161,9 +203,10 @@ def handle_place_ship(msg):
     elif (msg["ship"].title() == "Destroyer"):
 
       player_ships[msg["id"]].append(msg["ship"])
+
       des[msg["id"]]-=1
 
->>>>>>> Stashed changes
+
   try:
     player_id = msg["id"]
     player_no = player_numbers[player_id]
