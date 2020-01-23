@@ -173,9 +173,14 @@ def handle_place_ship(msg):
     alert_ship_placement(msg)
     send(msg)
     if game.ready():
-      send_alert("All ships placed... Player 1 ready to fire!",
+      if (player_no == 1):
+        send_alert("All ships placed... Are you ready to fire?",
                    players[player_id])
-      send({"type": "game-begun"}, room=players[player_id])
+        send({"type": "game-begun"}, room=players[player_id])
+      elif (player_no == 2):
+        send_alert("All ships placed... Your opponent is ready to fire!",
+                   players[player_id])
+        send({"type": "game-begun"}, room=players[player_id])
 
 def handle_hand_shake(msg):
     global bat
