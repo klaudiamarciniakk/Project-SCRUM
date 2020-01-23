@@ -76,6 +76,7 @@ $(document).ready(function() {
       turn = 1;
     }
     else if (msg.type == "fire"){
+
       turn = 3-msg.player_no;
       hit = msg.hit ? "hit" : "miss";
       board = (msg.player_no == player_no) ? ".top" : ".bottom";
@@ -85,9 +86,15 @@ $(document).ready(function() {
         console.log("here:"+loc)
         console.log($(board).find(String(loc)).children());
       }
-      $(".text").text("Player " + String(msg.player_no) + " fired " + msg.shot
-        + " shot at location " + String(((msg.locations[0]+1)%10)) + ", "+String(String.fromCharCode(~~(((msg.locations[0]+1)/10)+1)+64))+", " + hit + "!");
-    }
+      if(String(msg.player_no)==String(player_no)) {
+        $(".text").text("You fired " + msg.shot
+            + " shot at location [" + String(String.fromCharCode(~~(((msg.locations[0] + 1) / 10) + 1) + 64))  + ", " +String(((msg.locations[0] + 1) % 10)) + "] " + hit + "!");
+      }
+      else{
+        $(".text").text("Opponent fired " + msg.shot
+            + " shot at location [" + String(String.fromCharCode(~~(((msg.locations[0] + 1) / 10) + 1) + 64))  + ", " +String(((msg.locations[0] + 1) % 10)) + "] " + hit + "!");
+      }
+      }
     else if (msg.type == "game_over"){
       phase = "game_over"
     }

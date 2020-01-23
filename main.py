@@ -173,9 +173,9 @@ def handle_place_ship(msg):
     alert_ship_placement(msg)
     send(msg)
     if game.ready():
-      send_alert("All ships placed... Player 1 ready to fire!", 
-        players[player_id])
-      send({"type":"game-begun"},room=players[player_id])
+      send_alert("All ships placed... Player 1 ready to fire!",
+                   players[player_id])
+      send({"type": "game-begun"}, room=players[player_id])
 
 def handle_hand_shake(msg):
     global bat
@@ -248,8 +248,8 @@ def alert_ship_placement(msg, rm=None):
   y = (int(msg["location"]) / 10) + 1
   send_alert(
     msg["ship"].title() + " placed. " 
-    + msg["direction"].title() + ", at (" 
-    + str(x) + "," + str(chr(int(y)+64)) + ").", rm)
+    + msg["direction"].title() + ", at ["
+    + str(chr(int(y)+64)) + "," + str(x) + "].", rm)
 
 def send_alert(message, rm=None):
   send({"type":"alert", "message":message}, room=rm)
