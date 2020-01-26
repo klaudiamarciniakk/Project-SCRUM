@@ -94,6 +94,7 @@ class BattleshipGame():
     for existingShip in player:
       if ship.collision(existingShip):
         raise ValueError('Collision with existing ship')
+
     return False
 
   def checkGameOver(self, player_id):
