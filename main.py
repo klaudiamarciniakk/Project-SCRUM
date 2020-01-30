@@ -173,9 +173,9 @@ def handle_place_ship(msg):
     alert_ship_placement(msg)
     send(msg)
     if game.ready():
-      send_alert("All ships placed... Player 1 ready to fire!",
-                 players[player_id])
-      send({"type": "game-begun"}, room=players[player_id])
+        send_alert("All ships placed... Player 1 ready to fire!",
+                  players[player_id])
+    send({"type": "game-begun"}, room=players[player_id])
 
 
 
@@ -243,6 +243,7 @@ def handle_fire(msg):
         send_alert("GAME OVER, PLAYER " + str(player_no) + " WINS!!",
           players[player_id])
         send({"type":"game-over"},players[player_id])
+        socket.close()
     else:
       send_alert("Wait your turn!")
   except ValueError as e:

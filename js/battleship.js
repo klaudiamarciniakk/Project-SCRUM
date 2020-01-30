@@ -97,6 +97,8 @@ $(document).ready(function() {
         $(".text").text("Opponent fired " + msg.shot
             + " shot at location [" + String(String.fromCharCode(~~(((msg.locations[0] + 1) / 10) + 1) + 64))  + ", " +String(((msg.locations[0] + 1) % 10)) + "] " + hit + "!");
       }
+      textOn2 = $('.text').text();
+      $('.text2').prepend('<br/>').prepend(textOn2);
       }
     else if (msg.type == "game_over"){
       phase = "game_over"
