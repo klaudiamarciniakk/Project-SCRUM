@@ -139,119 +139,6 @@ $(document).ready(function() {
     $('.ship').text("Destroyer");
   });
 
-  $('.background').on('click', function () {
-      place=$(".background").text();
-      if(place=="Background"){
-        $('.background').text("Ship selection board")
-      }
-      else if(place=="Ship selection board"){
-        $('.background').text("History board")
-      }
-      else if(place=="History board"){
-        $('.background').text("Game arena")
-      }
-      else if(place=="Game arena"){
-        $('.background').text("Background")
-      }
-
-  })
-  $('.red').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'indianred')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'indianred')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'indianred')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'indianred')
-      $('.top').css('background', 'indianred')
-      }
-  })
-  $('.blue').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'dodgerblue')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'dodgerblue')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'dodgerblue')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'dodgerblue')
-      $('.top').css('background', 'dodgerblue')
-      }
-  })
-  $('.yellow').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'lightgoldenrodyellow')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'lightgoldenrodyellow')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'lightgoldenrodyellow')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'lightgoldenrodyellow')
-      $('.top').css('background', 'lightgoldenrodyellow')
-      }
-  })
-  $('.green').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'darkseagreen')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'darkseagreen')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'darkseagreen')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'darkseagreen')
-      $('.top').css('background', 'darkseagreen')
-      }
-  })
-  $('.pink').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'lightpink')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'lightpink')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'lightpink')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'lightpink')
-      $('.top').css('background', 'lightpink')
-      }
-  })
-  $('.gray').on('click', function(){
-    place=$(".background").text();
-    if(place=="Background"){
-        $('body').css('background', 'gray')
-      }
-      else if(place=="Ship selection board"){
-        $('.topPanel').css('background', 'gray')
-      }
-      else if(place=="History board"){
-        $('.console').css('background', 'gray')
-      }
-      else if(place=="Game arena"){
-        $('.bottom').css('background', 'gray')
-      $('.top').css('background', 'gray')
-      }
-  })
-
   $('.orientation').on('click', function() {
     direction = $(".orientation").text();
     if (direction == "Horizontal"){
@@ -318,7 +205,13 @@ function placeShip(location, length, direction, ship) {
     else if (shipText == "Destroyer"){
         des-=1;
        $('.ship5').text("Destroyer : "+des.toString());}
+  shipButton = $(".SelectShip");
+  consoleOutput = $(".console");
+    if (car === 0 && bat === 0 && cru === 0 && sub === 0 && des === 0) {
+    shipButton.remove();
+    consoleOutput.css("width", "100%");
 
+  }
 
   if (direction == "horizontal"){
     for (var i = location; i < (location + length); i++) {
