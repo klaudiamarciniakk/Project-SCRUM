@@ -158,11 +158,19 @@ html {
   color: black;
 }
 
-.text {
+.text, .text2 {
   width: 92%;
-  height: 86%;
   margin: 4%;
   display: inline-block;
+}
+
+.text2 {
+  overflow-y: scroll;
+  max-height: 270px;
+}
+
+.unvisible {
+  display: none;
 }
 
 .buttons {

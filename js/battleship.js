@@ -52,6 +52,7 @@ $(document).ready(function() {
     socket.send({"type":"hand-shake", "id":player_id})
   });
 
+
   // Message Handler -----------------------------------------------------------
   socket.on('message', function(msg) {
     console.log(msg);
@@ -70,6 +71,9 @@ $(document).ready(function() {
     }
     else if (msg.type == "alert"){
       $(".text").text(msg.message);
+      textOn = $('.text').text();
+      $('.text2').prepend('<br/>').prepend(textOn);
+      console.log('1');
     }
     else if (msg.type == "game-begun"){
       phase = "firing";
